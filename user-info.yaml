@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  tags:
+    - oingo
+    - boingo
+  name: wayback-archive-storage
+  description: ding-dong
+  links:
+    - url: https://github.com/shukibakbuki/newb-t
+      title: Github Repo
+      icon: github
+spec:
+  type: Bongos
+  lifecycle: production
+  owner: team-a
+  system: repos

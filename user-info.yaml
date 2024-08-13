@@ -4,12 +4,12 @@ metadata:
   tags:
     - oingo
     - boingo
-  name: wayback-archive-storage
-  description: ding-dong
+  name: newb-t
+  description: noobs!!!!!
   links:
     - url: https://github.com/shukibakbuki/newb-t
       title: Github Repo
-      icon: github
+      icon: gitlab
 spec:
   type: Bongos
   lifecycle: production

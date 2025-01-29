@@ -1,0 +1,65 @@
+language: go
+go_import_path: github.com/ethereum/go-ethereum
+sudo: false
+jobs:
+  allow_failures:
+    - stage: build
+      os: osx
+      go: 1.14.x
+      env:
+        - azure-osx
+        - azure-ios
+        - cocoapods-ios
+
+  include:
+    # This builder only tests code linters on latest version of Go
+    - stage: lint
+      os: linux
+      dist: xenial
+      go: 1.14.x
+      env:
+        - lint
+      git:
+        submodules: false # avoid cloning ethereum/tests
+      script:
+        - go run build/ci.go lint
+
+    # These are the latest Go versions.
+    - stage: build
+      os: linux
+      arch: amd64
+      dist: xenial
+      go: 1.14.x
+      env:
+        - GO111MODULE=on
+      script:
+        - go run build/ci.go install
+
+    - stage: build
+      if: type = pull_request
+      os: linux
+      arch: arm64
+      dist: xenial
+      go: 1.14.x
+      env:
+        - GO111MODULE=on
+      script:
+        - go run build/ci.go install
+
+    - stage: build
+      os: osx
+      osx_image: xcode11.3
+      go: 1.14.x
+      env:
+        - GO111MODULE=on
+      script:
+        - echo "Increase the maximum number of open file descriptors on macOS"
+        - NOFILE=20480
+        - sudo sysctl -w kern.maxfiles=$NOFILE
+        - sudo sysctl -w kern.maxfilesperproc=$NOFILE
+        - sudo launchctl limit maxfiles $NOFILE $NOFILE
+        - sudo launchctl limit maxfiles
+        - ulimit -S -n $NOFILE
+        - ulimit -n
+        - unset -f cd # workaround for https://github.com/travis-ci/travis-ci/issues/8703
+        - go run build/ci.go install

@@ -1,17 +1,35 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
+  name: newb-t-BE
+  description: newbt Back End
   tags:
+    - there
+    - be
+    - treasure
+  links:
+    - url: https://github.com/shukilagama/newb-t
+
+spec:
+  type: repo
+  lifecycle: production
+  owner: team-a
+  system: artist-engagement-portal
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: newbt-FE
+  description: newbt Front End
+  tags:
+    - here
     - oingo
     - boingo
-  name: newb-t
-  description: noobs!!!!!
   links:
-    - url: https://github.com/shukibakbuki/newb-t
-      title: Github Repo
-      icon: gitlab
+    - url: https://github.com/shukilagama/newb-t
+
 spec:
-  type: Bongos
+  type: bongos
   lifecycle: production
   owner: team-a
   system: repos

@@ -4,9 +4,8 @@ metadata:
   name: newb-t-BE
   description: newbt Back End
   tags:
-    - there
-    - be
-    - treasure
+    - backend-tag
+    - not-front
   links:
     - url: https://github.com/shukilagama/newb-t
 
@@ -22,14 +21,13 @@ metadata:
   name: newbt-FE
   description: newbt Front End
   tags:
-    - here
-    - oingo
-    - boingo
+    - Frontend
+    - not-backend
   links:
     - url: https://github.com/shukilagama/newb-t
 
 spec:
-  type: bongos
+  type: Repo
   lifecycle: production
   owner: team-a
   system: repos

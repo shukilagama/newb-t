@@ -4,8 +4,8 @@ metadata:
   name: newb-t-BE
   description: newbt Back End
   tags:
-    - backend-tag
-    - not-front
+    - backend
+    - notfront
   links:
     - url: https://github.com/shukilagama/newb-t
 
@@ -22,7 +22,7 @@ metadata:
   description: newbt Front End
   tags:
     - Frontend
-    - not-backend
+    - notbackend
   links:
     - url: https://github.com/shukilagama/newb-t
 

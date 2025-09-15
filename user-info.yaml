@@ -21,7 +21,7 @@ metadata:
   name: newbt-FE
   description: newbt Front End
   tags:
-    - Frontend
+    - frontend
     - notbackend
   links:
     - url: https://github.com/shukilagama/newb-t
